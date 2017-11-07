@@ -303,16 +303,16 @@ Here is how to create a default Rook cluster by deploying the operator, a contro
 ThirdPartyResource and finally a StorageClass.
 
 ```console
-$ kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-0.5/cluster/examples/kubernetes/rook-operator.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/rook/rook/v0.5.1/cluster/examples/kubernetes/rook-operator.yaml
 clusterrole "rook-operator" created
 serviceaccount "rook-operator" created
 clusterrolebinding "rook-operator" created
 deployment "rook-operator" created
 
-$ kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-0.5/cluster/examples/kubernetes/rook-cluster.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/rook/rook/v0.5.1/cluster/examples/kubernetes/rook-cluster.yaml
 cluster "my-rook" created
 
-$ kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-0.5/cluster/examples/kubernetes/rook-storageclass.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/rook/rook/v0.5.1/cluster/examples/kubernetes/rook-storageclass.yaml
 pool "replicapool" created
 storageclass "rook-block" created
 
@@ -324,7 +324,11 @@ $ # In order to make Rook the default Storage Provider by making the `rook-block
 $ kubectl patch storageclass rook-block -p '{"metadata":{"annotations": {"storageclass.kubernetes.io/is-default-class": "true"}}}'
 storageclass "rook-block" patched
 
-$ apt-get update && apt-get install ceph-common -y
+$ #Install ceph on host machines , in case of Ubuntu:
+$ apt-get update && apt-get install ceph-common -y 
+
+$#OR In case of CentOS
+$ yum install ceph-common on 
 ```
 
 One limitation with v0.3.0 is that you can't control to which namespaces the rook authentication Secret should be deployed, so if you want to create
