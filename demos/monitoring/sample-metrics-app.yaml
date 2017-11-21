@@ -42,7 +42,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: go-server
+      app: cm-enabled-app
   endpoints:
   - port: web
 ---
