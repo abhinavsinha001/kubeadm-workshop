@@ -42,8 +42,8 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: 
-  endpoints: go-server
+      app: go-server
+  endpoints: 
   - port: web
 ---
 kind: HorizontalPodAutoscaler
