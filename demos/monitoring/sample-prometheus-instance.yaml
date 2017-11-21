@@ -47,7 +47,7 @@ spec:
   serviceAccountName: prometheus
   serviceMonitorSelector:
     matchLabels:
-      service-monitor: go-server
+      service-monitor: cm-enabled-app
   resources:
     requests:
       memory: 300Mi
