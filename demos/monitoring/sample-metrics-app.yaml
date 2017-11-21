@@ -38,12 +38,12 @@ kind: ServiceMonitor
 metadata:
   name: go-server
   labels:
-    service-monitor: go-server
+    service-monitor: cm-enabled-app
 spec:
   selector:
     matchLabels:
-      app: cm-enabled-app
-  endpoints:
+      app: 
+  endpoints: go-server
   - port: web
 ---
 kind: HorizontalPodAutoscaler
