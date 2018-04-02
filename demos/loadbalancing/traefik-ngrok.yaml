@@ -1,5 +1,5 @@
 kind: Deployment
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 metadata:
   name: traefik-ingress-controller
   namespace: kube-system
@@ -24,7 +24,7 @@ spec:
         effect: NoSchedule
       serviceAccountName: traefik-ingress-controller
       containers:
-      - image: luxas/traefik:v1.3.8
+      - image: luxas/traefik:v1.5.4
         name: traefik-ingress-controller
         resources:
           limits:
@@ -95,7 +95,7 @@ data:
         addr: traefik-ingress-controller.kube-system:80
 ---
 kind: Deployment
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 metadata:
   name: ngrok
   namespace: kube-system

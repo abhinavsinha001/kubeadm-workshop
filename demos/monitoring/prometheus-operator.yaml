@@ -69,7 +69,7 @@ subjects:
   name: prometheus-operator
   namespace: default
 ---
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: prometheus-operator
@@ -88,7 +88,7 @@ spec:
       serviceAccountName: prometheus-operator
       containers:
        - name: prometheus-operator
-         image: luxas/prometheus-operator:v0.13.0
+         image: luxas/prometheus-operator:v0.17.0
          resources:
            requests:
              cpu: 100m
