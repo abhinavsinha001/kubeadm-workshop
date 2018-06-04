@@ -328,7 +328,7 @@ $ #Install ceph on host machines , in case of Ubuntu:
 $ apt-get update && apt-get install ceph-common -y 
 
 $#OR In case of CentOS
-$ yum install ceph-common on 
+$ yum install ceph-common 
 ```
 
 One limitation with v0.3.0 is that you can't control to which namespaces the rook authentication Secret should be deployed, so if you want to create
